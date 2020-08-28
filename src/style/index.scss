@@ -1,0 +1,292 @@
+@import "fonts";
+@import "mixin";
+@import "colors";
+@import "~normalize.css/normalize.css";
+
+
+body {
+  background: linear-gradient(
+                  180deg, rgba(0, 0, 0, 0.5) 0%,
+                  rgba(0, 0, 0, 0) 49.88%,
+                  rgba(0, 0, 0, 0.5) 100%),
+  url("../assets/images/patern.png");
+}
+
+.wrapper__content {
+  margin: 0 auto;
+  max-width: 1200px;
+  @include flex(column, nowrap, center, center);
+  height: 100vh;
+}
+
+.title {
+  font-family: 'Conv_Exo2.0-Thin', sans-serif;
+  color: $background-color;
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 300;
+  margin-top: 36px;
+  text-shadow: 0px 1px 1px #000000;
+}
+
+.cards {
+  font-family: "Conv_Trebuchet MS", sans-serif;
+  @include flex(row, wrap, center, center);
+  margin-right: 40px;
+}
+
+.cards__wrapper {
+  color: #FFFFFF;
+}
+
+.card__wrapper {
+  background: linear-gradient(135deg, transparent 30px, $primary-color 0px);
+  border-radius: 12px;
+  margin: 20px 0px 0px 40px;
+  display: flex;
+}
+
+.card__wrapper-disabled {
+  background: linear-gradient(135deg, transparent 30px, $disabled-color 0px);
+}
+
+.card {
+  position: relative;
+  width: 312px;
+  height: 472px;
+  border: 4px solid $primary-color;
+  border-radius: 12px;
+  background: url("../assets/images/cat.png") -34px 202px no-repeat, linear-gradient(135deg, transparent 29px, $background-color 0);
+  background-size: 120%;
+  @include flex(column, nowrap, space-between);
+  cursor: pointer;
+}
+
+.card-hover {
+  border: 4px solid $primary-hover-color;
+  background: url("../assets/images/cat.png") -34px 202px no-repeat, linear-gradient(135deg, transparent 25px, $background-color 0);
+  background-size: 120%;
+}
+
+.card-selected {
+  border: 4px solid $selected-hover-color;
+  background: url("../assets/images/cat.png") -34px 202px no-repeat, linear-gradient(135deg, transparent 25px, $background-color 0);
+  background-size: 120%;
+}
+
+.card-selected__hover {
+  border: 4px solid $selected-hover-color;
+  background: url("../assets/images/cat.png") -34px 202px no-repeat, linear-gradient(135deg, transparent 25px, $background-color 0);
+  background-size: 120%;
+}
+
+.card-disabled {
+  background: url("../assets/images/cat.png") -34px 202px no-repeat, linear-gradient(135deg, transparent 25px, $background-color 0);
+  background-size: 120%;
+  border: 4px solid $disabled-color;
+  opacity: 0.5;
+  mix-blend-mode: normal;
+  width: 312px;
+  height: 472px;
+  cursor: default;
+}
+
+.card:before {
+  content: "";
+  left: -19.69%;
+  right: 85.8%;
+  top: -10.0%;
+  bottom: 88.32%;
+  width: 90px;
+  height: 72px;
+  border-image: url("../assets/images/patern.png");
+  border-image-slice: 1;
+  transform: rotate(45deg);
+  border-right: 3px solid;
+  overflow: hidden;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.card__content {
+    @include flex(column, wrap);
+  margin-left: 47px;
+
+}
+
+
+.card__subdescription {
+  font-size: 16px;
+  line-height: 19px;
+  color: $text-color-secondary;
+  margin-top: 18px;
+}
+
+.card__subdescription-disabled {
+  color: $text-color-disabled;
+}
+
+.card__subdescription-selected__hover {
+  color: $text-color-selected;
+}
+
+.card__title {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  color: $text-color;
+}
+
+.card__title-disabled {
+  color: $text-color-disabled;
+}
+
+.card__subtitle {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: $text-color;
+}
+
+.card__subtitle-disabled {
+  color: $text-color-disabled;
+}
+
+.card__description {
+  font-size: 14px;
+  line-height: 16px;
+  color: $text-color-secondary;
+  margin-top: 15px;
+}
+
+.card__description-disabled {
+  color: $text-color-disabled;
+}
+
+.card__numbers {
+  font-weight: bold;
+}
+
+.ellipse {
+  margin: 0px 12px 12px 0px;
+  align-self: flex-end;
+  height: 80px;
+  width: 80px;
+  color: #ffffff;
+  background-color: $primary-color;
+  border-radius: 50%;
+  @include flex(column, wrap, flex-end, center);
+  box-sizing: border-box;
+}
+
+.ellipse-hover {
+  background-color: $primary-hover-color;
+}
+
+.ellipse-selected {
+  background-color: $selected-hover-color;
+}
+
+.ellipse-selected__hover {
+  background-color: $selected-color;
+}
+
+.ellipse-disabled {
+  background-color: $disabled-color;
+}
+
+.ellipse__weight {
+  margin-top: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 22px;
+}
+
+.ellipse__em {
+  margin-top: 8px;
+  font-size: 21px;
+  line-height: 22px;
+}
+
+
+.cards__footer {
+  font-family: "Trebuchet MS", sans-serif;
+  margin-top: 15px;
+  margin-left: 20px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.cards__footer-disabled {
+  color: $text-color-disabled-secondary;
+}
+
+.cards__buy {
+  color: $primary-color;
+  border-bottom: 1px dashed;
+  cursor: pointer;
+}
+
+.cards__buy:hover {
+  color: $primary-hover-color;
+}
+
+.cards__buy-selected {
+  color: $selected-hover-color;
+}
+
+.cards__buy-selected:hover {
+  color: $selected-color;
+}
+
+.cards__dot {
+  color: $primary-color;
+}
+
+.cards__dot:hover {
+  color: $primary-hover-color;
+}
+
+.cards__dot-selected {
+  color: $selected-hover-color;
+}
+
+.cards__dot-selected:hover {
+  color: $selected-color;
+}
+
+//------------------------------------------------------ONLY IE 11+ STYLE---------------------------------------------//
+
+_:-ms-fullscreen, :root .card__content {
+  margin-top: -200px;
+}
+
+//-------------------------------------------------------MEDIA REQUESTS-----------------------------------------------//
+
+@media screen and (max-width: 1165px) {
+  .wrapper__content {
+    max-width: 1000px;
+    @include flex(row, wrap, center, center);
+  }
+}
+@media screen and (max-width: 450px) {
+  .wrapper__content {
+    max-width: 300px;
+  }
+  .card__wrapper {
+    margin: 20px 0px 0px 0px;
+  }
+  .cards {
+    margin-right: 0px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .wrapper__content {
+    max-width: 200px;
+  }
+
+}
